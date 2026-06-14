@@ -1,21 +1,35 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hikka // Developer Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;500;800&display=swap" rel="stylesheet" />
+    <title>Adil Baizhanov // Developer</title>
+    <meta name="description" content="Junior Developer & UI Designer. JavaScript, Vue.js, Firebase." />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <div class="scroll-bar" id="scrollBar"></div>
+
     <nav>
       <div class="container navbar">
         <div class="logo">
-          <a href="#"><img src="" alt="" /> <span>Hikka</span></a>
+          <a href="#">
+            <img src="" alt="" />
+            <span>Adil</span>
+          </a>
+        </div>
+        <div class="lang-switcher" aria-label="Language switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="cs">CS</button>
         </div>
         <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="hamburger-btn"><span></span><span></span><span></span></label>
+        <label for="menu-toggle" class="hamburger-btn">
+          <span></span><span></span><span></span>
+        </label>
         <ul class="menu"></ul>
       </div>
     </nav>
@@ -23,29 +37,34 @@
     <header id="home" class="layout">
       <div class="container hero-flex">
         <div class="hero-text">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-label"></span>
+          </div>
           <h1 class="typed-heading"></h1>
           <p class="subtitle"></p>
           <div class="hero-btns">
             <a href="#" class="btn btn-primary"></a>
           </div>
         </div>
-        <div class="hero-image" data-aos="zoom-in">
+        <div class="hero-image" data-aos="zoom-in" data-aos-duration="900">
           <img class="profile-img" src="" alt="" />
         </div>
       </div>
     </header>
 
-    <section id="projects" class="container">
+    <section id="projects" class="container section-pad">
       <h2 class="section-title"></h2>
       <div class="project-grid"></div>
     </section>
 
-    <section id="skills" class="container">
+    <section id="skills" class="container section-pad">
       <h2 class="section-title"></h2>
       <div class="skills-grid"></div>
+      <p class="skills-note">dashed border = actively learning</p>
     </section>
 
-    <footer id="contact">
+    <footer id="contact" class="footer">
       <div class="container footer-content"></div>
     </footer>
 
