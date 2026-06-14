@@ -1,54 +1,107 @@
 const PortfolioApp = {
- state: {
-        isTransformed: false,
-        magicCount: 0
-    },
+  // ─── Рендер: Навигация
+  renderNav() {
+    const { logo, links } = portfolioData.nav;
 
-    ui: {
-        title: document.querySelector('.hero__title'),
-        btn: document.getElementById('js-test-btn'),
-        heroImg: document.querySelector('.hero__img')
-    },
+    document.querySelector(".logo a").href = logo.href;
+    document.querySelector(".logo img").src  = logo.src;
+    document.querySelector(".logo img").alt  = logo.alt;
 
-    // Инициализация
-    init() {
-        AOS.init({ duration: 1000, once: true });
-        this.addEventListeners();
-        console.log("App initialized successfully.");
-    },
+    const menu = document.querySelector(".menu");
+    menu.innerHTML = links
+      .map(({ label, href }) => `<li><a href="${href}">${label}</a></li>`)
+      .join("");
+  },
 
-    // Обработка событий
-    addEventListeners() {
-        this.ui.btn.addEventListener('click', () => this.toggleMagicEffect());
-    },
+  // ─── Рендер: Hero 
+  renderHero() {
+    const { photo, title, subtitle, cta } = portfolioData.hero;
 
-    // Основная логика (Циклы + Условия)
-    toggleMagicEffect() {
-        this.state.isTransformed = !this.state.isTransformed;
-        this.state.magicCount++;
+    const img = document.querySelector(".profile-img");
+    img.src = photo.src;
+    img.alt = photo.alt;
 
-        if (this.state.isTransformed) {
-            this.ui.title.textContent = "Code is Magic! ✨";
-            this.ui.title.style.color = "var(--color-accent)";
-            this.runConsoleDemo();
-        } else {
-            this.ui.title.textContent = "Junior Web Developer";
-            this.ui.title.style.color = "white";
-        }
-    },
+    document.querySelector("#home h1").textContent = title;
+    document.querySelector("#home p").textContent  = subtitle;
 
-    runConsoleDemo() {
-        console.log(`--- Magic Sequence #${this.state.magicCount} ---`);
-        
-        // Твой цикл for
-        for (let i = 1; i <= 3; i++) {
-            if (i === 2) continue; // Пропускаем цифру 2
-            console.log(`Processing layer ${i}...`);
-        }
-        
-        console.log("Status: Fully Transformed");
-    }
+    const btn = document.querySelector("#home .btn");
+    btn.textContent = cta.label;
+    btn.href        = cta.href;
+  },
+
+  // ─── Рендер: Skills
+  renderSkills() {
+    const { sectionTitle, items } = portfolioData.skills;
+
+    document.querySelector("#skills .section-title").textContent = sectionTitle;
+
+    const grid = document.querySelector(".skills-grid");
+    grid.innerHTML = items
+      .map(
+        ({ label, learning }, i) => `
+        <div
+          class="skill-components${learning ? " learning" : ""}"
+          data-aos="zoom-in"
+          data-aos-delay="${(i + 1) * 100}"
+        >${label}</div>`
+      )
+      .join("");
+  },
+
+  // ─── Рендер: Projects
+  renderProjects() {
+    const { sectionTitle, items } = portfolioData.projects;
+
+    document.querySelector("#projects .section-title").textContent = sectionTitle;
+
+    const grid = document.querySelector(".project-grid");
+    grid.innerHTML = items
+      .map(
+        ({ title, description, link }, i) => `
+        <div class="project-components" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
+          <h3>${title}</h3>
+          <p>${description}</p>
+          <a href="${link.href}" target="_blank" class="project-link">${link.label}</a>
+        </div>`
+      )
+      .join("");
+  },
+
+  // ─── Рендер: Footer
+  renderFooter() {
+    const { heading, tagline, email, copyright } = portfolioData.footer;
+
+    const footer = document.querySelector("footer .container");
+    footer.innerHTML = `
+      <h2 data-aos="fade-up">${heading}</h2>
+      <p>${tagline}</p>
+      <p>Email: <a href="mailto:${email}">${email}</a></p>
+      <div class="copyright"><p>${copyright}</p></div>
+    `;
+  },
+
+  //  Закрытие мобильного меню при клике на пункт 
+  initMenuClose() {
+    const toggle = document.getElementById("menu-toggle");
+    document.querySelectorAll(".menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.checked = false;
+      });
+    });
+  },
+
+  // ─── Инициализация 
+  init() {
+    this.renderNav();
+    this.renderHero();
+    this.renderSkills();
+    this.renderProjects();
+    this.renderFooter();
+    this.initMenuClose();
+
+    AOS.init({ duration: 800, once: true });
+    console.log("Portfolio initialized.");
+  },
 };
 
-// Запуск приложения
-PortfolioApp.init();
+document.addEventListener("DOMContentLoaded", () => PortfolioApp.init());

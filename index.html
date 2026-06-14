@@ -1,165 +1,59 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adil Bezhanov</title>
-
+    <title>Hikka // Developer Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;500;800&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <nav>
       <div class="container navbar">
         <div class="logo">
-          <a href="https://github.com/HikkaRin12">
-            <img src="logo.jpg" alt="Logo" />
-          </a>
+          <a href="#"><img src="" alt="" /> <span>Hikka</span></a>
         </div>
         <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="hamburger-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <label for="menu-toggle" class="hamburger-btn"><span></span><span></span><span></span></label>
+        <ul class="menu"></ul>
       </div>
     </nav>
 
     <header id="home" class="layout">
-      <div class="container">
-        <img
-          src="Adil-photo.jpg"
-          alt="Adil Bezhanov"
-          class="profile-img"
-          data-aos="fade-down"
-          data-aos-delay="300"
-        />
-
-        <h1 data-aos="fade-right" data-aos-delay="500">Junior Web Developer</h1>
-
-        <p data-aos="fade-left" data-aos-delay="700">
-          Will be text 
-        </p>
-
-        <a href="#contact" class="btn" data-aos="fade-up" data-aos-delay="900"
-          >Get In Touch</a
-        >
+      <div class="container hero-flex">
+        <div class="hero-text">
+          <h1 class="typed-heading"></h1>
+          <p class="subtitle"></p>
+          <div class="hero-btns">
+            <a href="#" class="btn btn-primary"></a>
+          </div>
+        </div>
+        <div class="hero-image" data-aos="zoom-in">
+          <img class="profile-img" src="" alt="" />
+        </div>
       </div>
     </header>
 
-    <section id="skills" class="container">
-      <h2 class="section-title" data-aos="fade-up">
-        Tech Stack & Learning Path
-      </h2>
-      <div class="skills-grid">
-        <div class="skill-components" data-aos="zoom-in" data-aos-delay="100">
-          HTML5 / CSS3
-        </div>
-        <div class="skill-components" data-aos="zoom-in" data-aos-delay="200">
-          Responsive Design
-        </div>
-        <div class="skill-components" data-aos="zoom-in" data-aos-delay="300">
-          Git / GitHub
-        </div>
-        <div class="skill-components" data-aos="zoom-in" data-aos-delay="400">
-          Figma
-        </div>
-
-        <div
-          class="skill-components learning"
-          data-aos="zoom-in"
-          data-aos-delay="500"
-        >
-          JavaScript (In Progress)
-        </div>
-        <div
-          class="skill-components learning"
-          data-aos="zoom-in"
-          data-aos-delay="600"
-        >
-          Vue.js (Planned)
-        </div>
-        <div
-          class="skill-components learning"
-          data-aos="zoom-in"
-          data-aos-delay="700"
-        >
-          Python (Planned)
-        </div>
-        <div class="skill-components" data-aos="zoom-in" data-aos-delay="800">
-          React (Planned)
-        </div>
-      </div>
+    <section id="projects" class="container">
+      <h2 class="section-title"></h2>
+      <div class="project-grid"></div>
     </section>
 
-    <section id="projects" class="container">
-      <h2 class="section-title" data-aos="fade-up">My Projects</h2>
-      <div class="project-grid">
-        <div class="project-components" data-aos="fade-up" data-aos-delay="100">
-          <h3>Personal-Control-with-Firebase</h3>
-          <p>
-            A personal control dashboard built with HTML, CSS, JavaScript, and
-            Firebase for real-time data management.
-          </p>
-          <a
-            href="https://my-control-dashboard.web.app"
-            target="_blank"
-            class="project-link"
-            >View Code</a
-          >
-        </div>
-        <div class="project-components" data-aos="fade-up" data-aos-delay="200">
-          <h3>Personal Portfolio</h3>
-          <p>
-            This website! Built with HTML, CSS, JavaScript, and AOS library for
-            smooth animations.
-          </p>
-          <a
-            href="https://github.com/HikkaRin12"
-            target="_blank"
-            class="project-link"
-            >View Code</a
-          >
-        </div>
-        <div class="project-components" data-aos="fade-up" data-aos-delay="300">
-          <h3>Future FullStack Project</h3>
-          <p>
-            Upcoming project featuring a Python backend and Vue.js frontend.
-            Stay tuned!
-          </p>
-          <a
-            href="https://github.com/HikkaRin12"
-            target="_blank"
-            class="project-link"
-            >Coming Soon</a
-          >
-        </div>
-      </div>
+    <section id="skills" class="container">
+      <h2 class="section-title"></h2>
+      <div class="skills-grid"></div>
     </section>
 
     <footer id="contact">
-      <div class="container" data-aos="fade-up">
-        <h2>Let's build something great!</h2>
-        <p>I'm open to internship and collaborations.</p>
-        <p>
-          Email: <a href="mailto:operas444@gmail.com">operas444@gmail.com</a>
-        </p>
-        <div class="copyright">
-          <p>© 2026 Adil Bezhanov</p>
-        </div>
-      </div>
+      <div class="container footer-content"></div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 800, once: true });
-    </script>
+    <script src="data.js"></script>
+    <script src="render.js"></script>
+    <script src="github.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
